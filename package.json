@@ -1,0 +1,44 @@
+{
+  "name": "math-evaluator",
+  "version": "0.1.0",
+  "description": "Simple Math Expressions Evaluator",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsc",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "run": "tsup && node ./dist/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "math",
+    "evaluator"
+  ],
+  "author": "Edmunds Folkmanis",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/folkmanis/math-evaluator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/folkmanis/math-evaluator/issues"
+  },
+  "homepage": "https://github.com/folkmanis/math-evaluator#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.14.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0",
+    "vitest": "^2.1.4"
+  }
+}
