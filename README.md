@@ -1,4 +1,4 @@
-# math-evaluator
+# simple-math-evaluator
 
 I was in need for simple arithmetic expression evaluator.
 
