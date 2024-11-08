@@ -21,6 +21,7 @@ const FUNCTIONS = {
     sin: Math.sin,
     sqrt: Math.sqrt,
     tan: Math.tan,
+    pow: Math.pow,
 };
 Object.seal(FUNCTIONS);
 

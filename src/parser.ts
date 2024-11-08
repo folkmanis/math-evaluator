@@ -155,11 +155,29 @@ function parseUnary(): Expression {
     return parsePrimary();
 }
 
+// Power ::= Unary |
+//                    Power '^' Unary |
+function parsePower() {
+    let expr = parseUnary();
+    let token = peek();
+    while (matchOp(token, '^')) {
+        token = next();
+        expr = {
+            type: 'binary',
+            operator: token!.value,
+            left: expr,
+            right: parseUnary(),
+        };
+        token = peek();
+    }
+    return expr;
+}
+
 // Multiplicative ::= Unary |
 //                    Multiplicative '*' Unary |
 //                    Multiplicative '/' Unary
 function parseMultiplicative() {
-    let expr = parseUnary();
+    let expr = parsePower();
     let token = peek();
     while (matchOp(token, '*') || matchOp(token, '/')) {
         token = next();
@@ -167,7 +185,7 @@ function parseMultiplicative() {
             type: 'binary',
             operator: token!.value,
             left: expr,
-            right: parseUnary(),
+            right: parsePower(),
         };
         token = peek();
     }
